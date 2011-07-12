@@ -4,7 +4,7 @@
 #pragma once
 #include <gl\gl.h>
 #include <gl\glu.h>
-#include <gl\glaux.h>
+//#include <gl\glaux.h>
 
 #ifndef	M_PI
 #define	M_PI	3.1415926535897932384626433832795

@@ -1,0 +1,13 @@
+#ifndef IMTOOLPATH_TOOLPATH_DEFDATA_H_
+#define IMTOOLPATH_TOOLPATH_DEFDATA_H_
+enum IM_CLDATA_TYPE{
+   IM_CL_NONE = 0,
+   IM_CL_SEGMENT,
+   IM_CL_CIRCLE
+
+};
+
+#ifndef CHAR_OF_LINE
+#define CHAR_OF_LINE 1024
+#endif
+#endif
