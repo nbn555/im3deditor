@@ -1,9 +1,15 @@
-#ifndef _IM_DEFINE_CONST_
-#define _IM_DEFINE_CONST_
+#ifndef IMBASEDATA_BASEDATA_IMDEFCONST_H_
+#define IMBASEDATA_BASEDATA_IMDEFCONST_H_
 #include "stdio.h"
+
+#define IM_REALLOC_STEP_2D 2
 #define IM_REALLOC_STEP 3
 #ifndef IM_EPSILON
 #define IM_EPSILON 1e-7
+#endif
+
+#ifndef IM_MICRO_VALUE
+#define IM_MICRO_VALUE 1e-3
 #endif
 
 #ifndef IM_PI
@@ -34,6 +40,8 @@
 #define IM_VOXEL_SIM_POLYGON 1
 #define IM_VOXEL_WORK_POLYGON 2
 
+#define MIN(a,b) ((a < b) ? a:b)
+#define MAX(a,b) ((a > b) ? a:b)
 extern double im_epsl;
 extern double im_epsl_small;
 extern double im_Sq_epsl;

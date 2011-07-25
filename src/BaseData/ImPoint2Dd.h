@@ -29,9 +29,12 @@ public:
     ImPoint2Dd operator /(double d) const ;
     const ImPoint2Dd& operator /=(double d);
 	double unit();
-	double scalarProduct(const ImPoint2Dd& v);
+	double scalarProduct(const ImPoint2Dd& v) const;
 	double crossProduct(const ImPoint2Dd& v);
 	bool isEqual(const ImPoint2Dd& v);
+	const double squareDistanceToPoint(const ImPoint2Dd &p) const;
+	const double squareDistanceToSegment(
+		const ImPoint2Dd &sp, const ImPoint2Dd &ep) const;
 };
 
 #endif

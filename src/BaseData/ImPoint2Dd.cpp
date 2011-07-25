@@ -161,7 +161,7 @@ double ImPoint2Dd::unit()
 	}
 	return d;
 }
-double ImPoint2Dd::scalarProduct(const ImPoint2Dd& v)
+double ImPoint2Dd::scalarProduct(const ImPoint2Dd& v) const
 {
 	double dret = m_v[0]*v.m_v[0] + m_v[1]*v.m_v[1];
 	return dret;
@@ -180,4 +180,34 @@ bool ImPoint2Dd::isEqual(const ImPoint2Dd& v)
 			return true;
 	}
 	return false;
+}
+
+const double ImPoint2Dd::squareDistanceToPoint(const ImPoint2Dd &p) const
+{
+	double dret = (m_v[0] - p.m_v[0]) * (m_v[0] - p.m_v[0]) + 
+		(m_v[1] - p.m_v[1]) * (m_v[1] - p.m_v[1]);
+	return dret;
+}
+
+const double ImPoint2Dd::squareDistanceToSegment(
+		const ImPoint2Dd &sp, const ImPoint2Dd &ep) const
+{
+	double dx = ep.m_v[0] - sp.m_v[0];
+	double dy = ep.m_v[1] - sp.m_v[1];
+	double sx = m_v[0] - sp.m_v[0];
+	double sy= m_v[1] - sp.m_v[1];
+	double t = (dx*sx + dy*sy) / (dx*dx + dy*dy);
+	double dret = 0;
+	if(t < 0){
+		dret = squareDistanceToPoint(sp);
+	}
+	else if(t > 1.0){
+		dret = squareDistanceToPoint(ep);
+	}
+	else{
+		double temx =  (sx - t*dx);
+		double temy = (sy - t*dy);
+		dret = temx*temx + temy*temy;
+	}
+	return dret;
 }

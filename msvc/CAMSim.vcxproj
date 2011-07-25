@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{72D778EC-127F-483B-8D3C-9F7B9EED3D99}</ProjectGuid>
+    <RootNamespace>CAMSim</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\lib;..\src\BaseData;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>..\lib\$(ProjectName).lib_d</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\lib;..\src\BaseData;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;CAMSIM_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>..\lib\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\CAMSim\ImBallTool.cpp" />
+    <ClCompile Include="..\src\CAMSim\ImBallToolRect.cpp" />
+    <ClCompile Include="..\src\CAMSim\ImBaseObject.cpp" />
+    <ClCompile Include="..\src\CAMSim\ImBasePolygon.cpp" />
+    <ClCompile Include="..\src\CAMSim\ImBaseVertex.cpp" />
+    <ClCompile Include="..\src\CAMSim\ImBaseVoxel.cpp" />
+    <ClCompile Include="..\src\CAMSim\imCalcFuncs.cpp" />
+    <ClCompile Include="..\src\CAMSim\ImFlatToolRect.cpp" />
+    <ClCompile Include="..\src\CAMSim\imGLFunc.cpp" />
+    <ClCompile Include="..\src\CAMSim\ImIVoxel.cpp" />
+    <ClCompile Include="..\src\CAMSim\ImSegment.cpp" />
+    <ClCompile Include="..\src\CAMSim\ImSimPolygon.cpp" />
+    <ClCompile Include="..\src\CAMSim\ImSimVertex.cpp" />
+    <ClCompile Include="..\src\CAMSim\ImSimVoxel.cpp" />
+    <ClCompile Include="..\src\CAMSim\ImSimWork.cpp" />
+    <ClCompile Include="..\src\CAMSim\ImToolG.cpp" />
+    <ClCompile Include="..\src\CAMSim\ImVoxelSub.cpp" />
+    <ClCompile Include="..\src\CAMSim\ObjStore.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\CAMSim\ImBallTool.h" />
+    <ClInclude Include="..\src\CAMSim\ImBallToolRect.h" />
+    <ClInclude Include="..\src\CAMSim\ImBaseObject.h" />
+    <ClInclude Include="..\src\CAMSim\ImBasePolygon.h" />
+    <ClInclude Include="..\src\CAMSim\ImBaseVertex.h" />
+    <ClInclude Include="..\src\CAMSim\ImBaseVoxel.h" />
+    <ClInclude Include="..\src\CAMSim\imCalcFuncs.h" />
+    <ClInclude Include="..\src\CAMSim\ImFlatToolRect.h" />
+    <ClInclude Include="..\src\CAMSim\imGLFunc.h" />
+    <ClInclude Include="..\src\CAMSim\ImIVoxel.h" />
+    <ClInclude Include="..\src\CAMSim\ImSegment.h" />
+    <ClInclude Include="..\src\CAMSim\ImSimPolygon.h" />
+    <ClInclude Include="..\src\CAMSim\ImSimVertex.h" />
+    <ClInclude Include="..\src\CAMSim\ImSimVoxel.h" />
+    <ClInclude Include="..\src\CAMSim\ImSimWork.h" />
+    <ClInclude Include="..\src\CAMSim\ImToolG.h" />
+    <ClInclude Include="..\src\CAMSim\ImVoxelSub.h" />
+    <ClInclude Include="..\src\CAMSim\ObjStore.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
