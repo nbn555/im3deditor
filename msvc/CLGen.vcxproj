@@ -78,20 +78,20 @@
   <ItemGroup>
     <ClCompile Include="..\src\CLGen\AxisContour.cpp" />
     <ClCompile Include="..\src\CLGen\ballEndMillSection.cpp" />
+    <ClCompile Include="..\src\CLGen\ClGenObject.cpp" />
     <ClCompile Include="..\src\CLGen\globalFunct2D.cpp" />
     <ClCompile Include="..\src\CLGen\ICLGenCutter.cpp" />
     <ClCompile Include="..\src\CLGen\ImCell2D.cpp" />
     <ClCompile Include="..\src\CLGen\ImCLGenObj.cpp" />
-    <ClCompile Include="..\src\CLGen\ImSegment2D.cpp" />
     <ClCompile Include="..\src\CLGen\ImVertex2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\CLGen\AxisContour.h" />
+    <ClInclude Include="..\src\CLGen\ClGenObject.h" />
     <ClInclude Include="..\src\CLGen\globalFunct2D.h" />
     <ClInclude Include="..\src\CLGen\ICLGenCutter.h" />
     <ClInclude Include="..\src\CLGen\ImCell2D.h" />
     <ClInclude Include="..\src\CLGen\ImCLGenObj.h" />
-    <ClInclude Include="..\src\CLGen\ImSegment2D.h" />
     <ClInclude Include="..\src\CLGen\ImVertex2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

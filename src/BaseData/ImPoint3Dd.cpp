@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+//#include "StdAfx.h"
 #include "ImPoint3Dd.h"
 #include "ImDefConst.h"
 

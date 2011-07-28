@@ -1,4 +1,4 @@
-#include "Stdafx.h"
+//#include "Stdafx.h"
 #include "ImDefConst.h"
 
 double im_epsl = 1e-6;

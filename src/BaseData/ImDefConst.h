@@ -42,6 +42,10 @@
 
 #define MIN(a,b) ((a < b) ? a:b)
 #define MAX(a,b) ((a > b) ? a:b)
+
+#define MIN3(a,b,c) ((((a)<(b))&&((a)<(c))) ? (a) : (((b)<(c)) ? (b) : (c)))
+#define MAX3(a,b,c) ((((a)>(b))&&((a)>(c))) ? (a) : (((b)>(c)) ? (b) : (c)))
+
 extern double im_epsl;
 extern double im_epsl_small;
 extern double im_Sq_epsl;
