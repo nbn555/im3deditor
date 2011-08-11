@@ -58,7 +58,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\lib;..\..\include;..\ImToolPath;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\lib;..\..\include;..\ImToolPath;..\ClGen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -111,6 +111,7 @@
   <ItemGroup>
     <ClCompile Include="CAMSim.cpp" />
     <ClCompile Include="ColorBox.cpp" />
+    <ClCompile Include="GenerateClDlg.cpp" />
     <ClCompile Include="IM3DEditor.cpp" />
     <ClCompile Include="IM3DEditorDoc.cpp" />
     <ClCompile Include="IM3DEditorView.cpp" />
@@ -125,6 +126,7 @@
   <ItemGroup>
     <ClInclude Include="CAMSim.h" />
     <ClInclude Include="ColorBox.h" />
+    <ClInclude Include="GenerateClDlg.h" />
     <ClInclude Include="IM3DEditor.h" />
     <ClInclude Include="IM3DEditorDoc.h" />
     <ClInclude Include="IM3DEditorView.h" />

@@ -9,7 +9,7 @@
 #include <math.h>
 #include "objStore.h"
 #include "CAMSim.h"
-
+#include "ClGenObject.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -95,6 +95,7 @@ m_cx(0)
 ,m_viewType(1)
 ,m_simulationStatus(0)
 ,m_CamSim(NULL)
+,m_clGenObj(NULL)
 ,m_isViewMaterial(true)
 ,m_isViewTool(true)
 ,m_isViewToolPath(true)
@@ -790,6 +791,31 @@ void CIM3DEditorView::renderObject()
         disableAntialias();
         ::glPopMatrix();
      }
+   // render cl gen cl
+   if(m_clGenObj){
+	   ::glPushMatrix();
+	   m_clGenObj->drawCL();
+	   ::glPopMatrix();
+   }
+   // render clGen cad model
+   if(m_clGenObj){
+	   ::glPushMatrix();
+	//   m_clGenObj->drawCadModel();
+	   ::glPopMatrix();
+   }
+   // render cutting segment
+   if(m_clGenObj){
+	   ::glPushMatrix();
+	   m_clGenObj->drawCuttingSegment();
+	   ::glPopMatrix();
+   }
+
+   // render cell model
+    if(m_clGenObj){
+	   ::glPushMatrix();
+	   m_clGenObj->drawModel();
+	   ::glPopMatrix();
+   }
 }
 
 
@@ -1191,3 +1217,5 @@ LRESULT CIM3DEditorView::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
    }
    return CView::WindowProc(message, wParam, lParam);
 }
+
+

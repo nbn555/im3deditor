@@ -6,7 +6,7 @@
 
 class ImCAMSim;
 class CIM3DEditorView;
-
+class ClGenObject;
 class CIM3DEditorDoc : public CDocument
 {
 protected: // create from serialization only
@@ -16,6 +16,7 @@ protected: // create from serialization only
 // Attributes
    ImCAMSim* m_CamSim;
    CIM3DEditorView* m_pView;
+   ClGenObject *m_clGenObj;
 public:
 
 // Operations
@@ -45,6 +46,8 @@ public:
    // Setup Simulation
    afx_msg void OnSetupMaterial();
    afx_msg void OnSetupTool();
+   afx_msg void OnClgenLoadsolidmodel();
+   afx_msg void OnClgenGeneratecl();
 };
 
 

@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\BaseData\imCalcFuncs.cpp" />
     <ClCompile Include="..\src\BaseData\ImDefConst.cpp" />
     <ClCompile Include="..\src\BaseData\ImPoint2Dd.cpp" />
     <ClCompile Include="..\src\BaseData\ImPoint3Dd.cpp" />
@@ -18,6 +19,7 @@
     <ClCompile Include="..\src\BaseData\ImTriangle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\BaseData\imCalcFuncs.h" />
     <ClInclude Include="..\src\BaseData\ImDefConst.h" />
     <ClInclude Include="..\src\BaseData\ImPoint2Dd.h" />
     <ClInclude Include="..\src\BaseData\ImPoint3Dd.h" />

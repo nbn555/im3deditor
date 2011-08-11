@@ -5,7 +5,11 @@
 #define IM_REALLOC_STEP_2D 2
 #define IM_REALLOC_STEP 3
 #ifndef IM_EPSILON
-#define IM_EPSILON 1e-7
+#define IM_EPSILON 1e-6
+#endif
+
+#ifndef IM_EPSILON_E5
+#define IM_EPSILON_E5 1e-5
 #endif
 
 #ifndef IM_MICRO_VALUE

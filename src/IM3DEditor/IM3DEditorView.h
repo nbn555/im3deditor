@@ -10,7 +10,7 @@
 #include "ImPoint3Dd.h"
 typedef ImPoint3Dd Point3Dd;
 class ImCAMSim;
-
+class ClGenObject;
 class CIM3DEditorView : public CView
 {
 protected: // create from serialization only
@@ -71,6 +71,7 @@ private:
    Point3Dd m_size;// size of bounding box of all object in view
    int m_simulationStatus; // using to control simulation. 0 - stop; 1 - start; 2 - pause
    ImCAMSim* m_CamSim;
+   ClGenObject *m_clGenObj;
    // VIEW
    bool m_isViewMaterial;
    bool m_isViewToolPath;
@@ -104,6 +105,8 @@ public:
    void setupMaterial();
    ImCAMSim* getCAMSim(){ return m_CamSim; };
    void setCAMSim(ImCAMSim* sim){ m_CamSim = sim; };
+   ClGenObject* getCLGenObj(){return m_clGenObj;};
+   void setCLGenObj(ClGenObject *clObj){m_clGenObj = clObj;};
 public:
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 public:
@@ -167,6 +170,7 @@ public:
    afx_msg void OnUpdateViewSimulationToolpath(CCmdUI *pCmdUI);
 protected:
    virtual LRESULT WindowProc(UINT message, WPARAM wParam, LPARAM lParam);
+
 };
 
 #ifndef _DEBUG  // debug version in IM3DEditorView.cpp

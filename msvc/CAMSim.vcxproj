@@ -82,7 +82,6 @@
     <ClCompile Include="..\src\CAMSim\ImBasePolygon.cpp" />
     <ClCompile Include="..\src\CAMSim\ImBaseVertex.cpp" />
     <ClCompile Include="..\src\CAMSim\ImBaseVoxel.cpp" />
-    <ClCompile Include="..\src\CAMSim\imCalcFuncs.cpp" />
     <ClCompile Include="..\src\CAMSim\ImFlatToolRect.cpp" />
     <ClCompile Include="..\src\CAMSim\imGLFunc.cpp" />
     <ClCompile Include="..\src\CAMSim\ImIVoxel.cpp" />
@@ -102,7 +101,6 @@
     <ClInclude Include="..\src\CAMSim\ImBasePolygon.h" />
     <ClInclude Include="..\src\CAMSim\ImBaseVertex.h" />
     <ClInclude Include="..\src\CAMSim\ImBaseVoxel.h" />
-    <ClInclude Include="..\src\CAMSim\imCalcFuncs.h" />
     <ClInclude Include="..\src\CAMSim\ImFlatToolRect.h" />
     <ClInclude Include="..\src\CAMSim\imGLFunc.h" />
     <ClInclude Include="..\src\CAMSim\ImIVoxel.h" />
