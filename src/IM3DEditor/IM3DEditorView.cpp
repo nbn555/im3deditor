@@ -800,7 +800,7 @@ void CIM3DEditorView::renderObject()
    // render clGen cad model
    if(m_clGenObj){
 	   ::glPushMatrix();
-	//   m_clGenObj->drawCadModel();
+	   m_clGenObj->drawCadModel();
 	   ::glPopMatrix();
    }
    // render cutting segment
@@ -813,7 +813,7 @@ void CIM3DEditorView::renderObject()
    // render cell model
     if(m_clGenObj){
 	   ::glPushMatrix();
-	   m_clGenObj->drawModel();
+	  // m_clGenObj->drawModel();
 	   ::glPopMatrix();
    }
 }
