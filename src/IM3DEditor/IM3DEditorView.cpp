@@ -10,6 +10,7 @@
 #include "objStore.h"
 #include "CAMSim.h"
 #include "ClGenObject.h"
+#include "StlObject.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -96,6 +97,7 @@ m_cx(0)
 ,m_simulationStatus(0)
 ,m_CamSim(NULL)
 ,m_clGenObj(NULL)
+,m_stlObj(NULL)
 ,m_isViewMaterial(true)
 ,m_isViewTool(true)
 ,m_isViewToolPath(true)
@@ -181,6 +183,10 @@ CIM3DEditorView::~CIM3DEditorView()
    if(m_pDC){
       delete m_pDC;
       m_pDC = NULL;
+   }
+   if(m_stlObj){
+	   delete m_stlObj;
+	   m_stlObj = 0;
    }
 }
 
@@ -816,6 +822,13 @@ void CIM3DEditorView::renderObject()
 	  // m_clGenObj->drawModel();
 	   ::glPopMatrix();
    }
+
+	// render stl proj
+	if(m_isViewMaterial && m_stlObj){
+		::glPushMatrix();
+		m_stlObj->draw(m_viewType);
+	   ::glPopMatrix();
+	}
 }
 
 

@@ -10,10 +10,25 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\stlEditor\AABBTree.cpp" />
+    <ClCompile Include="..\src\stlEditor\Point3Dd.cpp" />
+    <ClCompile Include="..\src\stlEditor\StlObject.cpp" />
+    <ClCompile Include="..\src\stlEditor\StlTriangle.cpp" />
+    <ClCompile Include="..\src\stlEditor\StlVertex.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\stlEditor\AABBTree.h" />
+    <ClInclude Include="..\src\stlEditor\Point3Dd.h" />
+    <ClInclude Include="..\src\stlEditor\StlObject.h" />
+    <ClInclude Include="..\src\stlEditor\StlTriangle.h" />
+    <ClInclude Include="..\src\stlEditor\StlVertex.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F0E49392-4DD2-488B-AC79-A40B2A06D36F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>ImSTLEditor</RootNamespace>
+    <ProjectName>STLProj</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -27,6 +42,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -41,26 +57,29 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\lib;..\src\BaseData;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <OutputFile>..\lib\$(ProjectName).lib_d</OutputFile>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\lib;..\src\BaseData;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -68,22 +87,10 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <OutputFile>..\lib\$(ProjectName).lib</OutputFile>
+    </Lib>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <None Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\src\stlEditor\pre_AABBNode.cpp" />
-    <ClCompile Include="..\..\src\stlEditor\pre_StlObject.cpp" />
-    <ClCompile Include="..\..\src\stlEditor\pre_Triangle.cpp" />
-    <ClCompile Include="..\..\src\stlEditor\pre_Vertex.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\src\stlEditor\pre_AABBNode.h" />
-    <ClInclude Include="..\..\src\stlEditor\pre_StlObject.h" />
-    <ClInclude Include="..\..\src\stlEditor\pre_Triangle.h" />
-    <ClInclude Include="..\..\src\stlEditor\pre_Vertex.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

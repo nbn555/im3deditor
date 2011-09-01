@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CAMSim", "CAMSim.vcxproj", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImBaseData", "ImBaseData.vcxproj", "{9548A336-88BE-4C03-B51C-A0D814387004}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "STLProj", "STLProj\STLProj.vcxproj", "{6D97811E-F2C4-4F8C-A005-4AFCF4C60340}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -37,6 +39,10 @@ Global
 		{9548A336-88BE-4C03-B51C-A0D814387004}.Debug|Win32.Build.0 = Debug|Win32
 		{9548A336-88BE-4C03-B51C-A0D814387004}.Release|Win32.ActiveCfg = Release|Win32
 		{9548A336-88BE-4C03-B51C-A0D814387004}.Release|Win32.Build.0 = Release|Win32
+		{6D97811E-F2C4-4F8C-A005-4AFCF4C60340}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6D97811E-F2C4-4F8C-A005-4AFCF4C60340}.Debug|Win32.Build.0 = Debug|Win32
+		{6D97811E-F2C4-4F8C-A005-4AFCF4C60340}.Release|Win32.ActiveCfg = Release|Win32
+		{6D97811E-F2C4-4F8C-A005-4AFCF4C60340}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

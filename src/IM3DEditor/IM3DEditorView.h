@@ -8,9 +8,10 @@
 #include "imViewDefinitions.h"
 #include <vector>
 #include "ImPoint3Dd.h"
-typedef ImPoint3Dd Point3Dd;
+typedef ImPoint3Dd POINT3DD_;
 class ImCAMSim;
 class ClGenObject;
+class StlObject;
 class CIM3DEditorView : public CView
 {
 protected: // create from serialization only
@@ -67,11 +68,12 @@ private:
 	GLuint	m_uiDisplayAxis;
 	std::vector<int> m_ObjIndex;
    int m_viewType;// 0: wire, 1: solid, 2: wire and solid
-   Point3Dd m_ov; // origin of bounding box of all object in view
-   Point3Dd m_size;// size of bounding box of all object in view
+   POINT3DD_ m_ov; // origin of bounding box of all object in view
+   POINT3DD_ m_size;// size of bounding box of all object in view
    int m_simulationStatus; // using to control simulation. 0 - stop; 1 - start; 2 - pause
    ImCAMSim* m_CamSim;
    ClGenObject *m_clGenObj;
+   StlObject *m_stlObj;
    // VIEW
    bool m_isViewMaterial;
    bool m_isViewToolPath;
@@ -107,6 +109,8 @@ public:
    void setCAMSim(ImCAMSim* sim){ m_CamSim = sim; };
    ClGenObject* getCLGenObj(){return m_clGenObj;};
    void setCLGenObj(ClGenObject *clObj){m_clGenObj = clObj;};
+   void setStlObject(StlObject *stlObj){m_stlObj = stlObj;};
+   StlObject* getStlObject(){ return m_stlObj;};
 public:
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 public:

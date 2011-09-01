@@ -13,6 +13,8 @@
 #include "SetupToolDlg.h"
 #include "ClGenObject.h"
 #include "GenerateClDlg.h"
+#include "StlObject.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -122,6 +124,7 @@ void CIM3DEditorDoc::OnFileOpen()
 		const char *cc = ss.c_str();      
       CString fileExt = filedlg.GetFileExt();
       if(0 == fileExt.CompareNoCase(_T("stl"))){
+#if 0
 		   int ind = g_Store.createAnObjectFromStl(cc);
          if(ind >= 0){
             double ov[3],lv[3];
@@ -130,6 +133,21 @@ void CIM3DEditorDoc::OnFileOpen()
             m_pView-> fitToScreenSize(3);
 	         m_pView->moveToCenterScreen();
          }
+#else // test project STL
+
+		  StlObject *stlObj = m_pView->getStlObject();
+		  if(0 == stlObj){
+			  stlObj = new StlObject();
+			  m_pView->setStlObject(stlObj);
+		  }
+		  if(stlObj->loadStlObject(cc)){
+			  double ov[3],lv[3];
+            stlObj->getBoundingBoxOfObject(ov,lv);
+            m_pView->updateBoundingBox(ov,lv);
+            m_pView-> fitToScreenSize(3);
+	         m_pView->moveToCenterScreen();
+		  }
+#endif
       }
       else if(0 == fileExt.CompareNoCase(_T("cl"))){
          if(NULL == m_CamSim){
@@ -247,10 +265,16 @@ void CIM3DEditorDoc::OnClgenGeneratecl()
 	if(m_clGenObj){
 		GenerateClDlg clgenDlg;
 		if(IDOK == clgenDlg.DoModal()){
+			DWORD st = ::GetTickCount();
 			int axiscontour = clgenDlg.getAxisContourType();
 			double pitch = clgenDlg.getPitch();
 			double radii = clgenDlg.getRadius();
 			m_clGenObj->generateCL(axiscontour,pitch, radii);
+			DWORD et = ::GetTickCount();
+			DWORD time_ = et - st;
+			CString str;
+			str.Format(_T("Total time: %d (ms)"),time_);
+			AfxMessageBox(str);
 		}
 	}
 }
